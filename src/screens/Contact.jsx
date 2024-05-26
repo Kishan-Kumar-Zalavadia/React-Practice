@@ -1,11 +1,11 @@
 import React from "react";
-import store from "../store/store";
+import { store } from "../store/store";
 import { incrementByAmount } from "../store/reducer";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 export default function Contact() {
-  // ! Store the state. 
+  // ! Store the state.
   // * "state" name can be anything
   const val = useSelector((state) => state.value);
   return (
@@ -22,7 +22,7 @@ export default function Contact() {
       </button>
 
       {/* //! To prevent from re-rendering we need to use link tag */}
-      <Link to = '/todo'> Todo </Link>
+      <Link to="/todo"> Todo </Link>
     </div>
   );
 }
