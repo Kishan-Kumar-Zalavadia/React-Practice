@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 
 const expensiveCalculation = (num) => {
@@ -13,11 +14,14 @@ export default function Todo() {
   const [count, setCount] = useState(0);
   const [todos, setTodos] = useState([]);
 
+  // ! use the global value from contact page using redux
+  const val = useSelector((state) => state.value);
+
   // const calculation = expensiveCalculation();
   // ! useMemo
-  const calculation = useMemo(()=> expensiveCalculation(count),[count]);
+  const calculation = useMemo(() => expensiveCalculation(count), [count]);
   // * Storing inside a cache
-  console.log("Re-render")
+  console.log("Re-render");
   const increase = () => {
     setCount((c) => c + 1);
   };
@@ -45,11 +49,13 @@ export default function Todo() {
       {/* // ! Navigate to other link */}
       {/* // * Click the button to navigate */}
       {/* <button >User List</button> */}
-      <Link to={'/user-list'}>User List</Link>
+      <Link to={"/user-list"}>User List</Link>
 
       {/* // ! Navigate */}
       {/* // * Navigate directly to about if count = 5 */}
-      {count === 5 && <Navigate to={'/about'}> About </Navigate>}
+      {count === 5 && <Navigate to={"/about"}> About </Navigate>}
+
+      <h4>Value coming from contact from reducer {val}</h4>
     </div>
   );
 }
