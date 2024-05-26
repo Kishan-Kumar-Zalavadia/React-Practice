@@ -3,7 +3,7 @@
 * React Router
     * https://reactrouter.com/en/main/components/navigate
 
-* Redux:
+* Redux: 
     * https://blog.logrocket.com/understanding-redux-tutorial-examples/#using-redux-react
     * https://redux.js.org/usage/configuring-your-store
  
@@ -12,4 +12,6 @@
   * https://github.com/rt2zz/redux-persist
 
 * Context
+   * Generally used for singular things.
+   * Use redux for multiple things to create.
    * https://blog.logrocket.com/react-context-api-deep-dive-examples/
