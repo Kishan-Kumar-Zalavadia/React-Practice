@@ -15,6 +15,7 @@ import { BrowserRouter, Routes } from "react-router-dom";
 import {store} from "./store/store";
 import React from "react";
 import { Provider } from "react-redux";
+import { CountProvider } from "./context/CountContext";
 
 const route = createBrowserRouter([
   {
@@ -44,23 +45,10 @@ function App() {
     <div className="App">
       {/* // * Provider is for redux */}
       <Provider store={store}>
-        {/* <h1>Hello World!</h1> */}
-        {/* <About></About> */}
-        {/* <Form /> */}
-        {/* <HooksForm/> */}
-        {/* <UserList/> */}
-        {/* <Todo/> */}
-        <RouterProvider router={route} />
-
-        {/* // ! OR */}
-        {/* <BrowserRouter>
-        <div>
-          <Routes>
-            <Route path="/" element={<About />} />
-            <Route path="/todo" element={<Todo />} />
-          </Routes>
-        </div>
-      </BrowserRouter> */}
+        {/* // ! All the components inside CountProvider can access the value passed in CountContext.jsx */}
+        <CountProvider>
+          <RouterProvider router={route} />
+        </CountProvider>
       </Provider>
     </div>
   );
