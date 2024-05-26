@@ -21,8 +21,9 @@ export default function Todo() {
   // ! use the value coming from Count Context API
   // const contextObject = useContext(CountContext);
   // * OR
-  const { countFromContext } = useContext(CountContext);
+  // const { countFromContext } = useContext(CountContext);
   // * The value coming from context is an `object`
+  const { contextCount, setContextCount } = useContext(CountContext);
 
   // const calculation = expensiveCalculation();
   // ! useMemo
@@ -34,6 +35,10 @@ export default function Todo() {
   };
   const addTodo = () => {
     setTodos((t) => [...t, "New Todo"]);
+  };
+
+  const contextIncrement = () => {
+    setContextCount(contextCount + 1);
   };
 
   return (
@@ -63,9 +68,11 @@ export default function Todo() {
       {count === 5 && <Navigate to={"/about"}> About </Navigate>}
 
       <h4>Value coming from contact from reducer: {val}</h4>
+
       {/* <h4>Value coming from context: {contextObject.countFromContext}</h4> */}
       {/* // * OR */}
-      <h4>Value coming from context: {countFromContext}</h4>
+      <h4>Value coming from context: {contextCount}</h4>
+      <button onClick={contextIncrement}>Increase Context Value</button>
     </div>
   );
 }
