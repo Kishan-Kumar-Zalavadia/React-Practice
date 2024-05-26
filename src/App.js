@@ -12,6 +12,17 @@ import {
 } from "react-router-dom";
 import { BrowserRouter, Routes } from "react-router-dom";
 
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import rootReducer from "./store/reducer";
+import { configureStore } from "@reduxjs/toolkit";
+
+// ! Create Store
+// const store = createStore(rootReducer);
+// ! OR
+const store = configureStore({
+  reducer: rootReducer,
+});
 
 const route = createBrowserRouter([
   {
@@ -39,6 +50,8 @@ const route = createBrowserRouter([
 function App() {
   return (
     <div className="App">
+      {/* // * Provider is for redux */}
+      <Provider store={store}>
         {/* <h1>Hello World!</h1> */}
         {/* <About></About> */}
         {/* <Form /> */}
@@ -56,6 +69,7 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter> */}
+      </Provider>
     </div>
   );
 }
