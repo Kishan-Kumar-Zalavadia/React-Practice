@@ -10,3 +10,6 @@
 * Persist
   * Store the redux-reducer data to local storage.
   * https://github.com/rt2zz/redux-persist
+
+* Context
+   * https://blog.logrocket.com/react-context-api-deep-dive-examples/
