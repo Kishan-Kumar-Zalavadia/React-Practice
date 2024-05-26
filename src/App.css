@@ -4,5 +4,13 @@
 
 
 *{
+  color: white;
+  background-color: black;
   margin: 10px;
+  button{
+    border: 1px solid white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
 }
