@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import { CountContext } from "../context/CountContext";
+import UserCard from "../components/UserCard";
 
 const expensiveCalculation = (num) => {
   console.log("Calculating...");
@@ -73,6 +74,7 @@ export default function Todo() {
       {/* // * OR */}
       <h4>Value coming from context: {contextCount}</h4>
       <button onClick={contextIncrement}>Increase Context Value</button>
+      <UserCard/>
     </div>
   );
 }
